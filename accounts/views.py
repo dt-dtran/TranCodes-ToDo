@@ -14,7 +14,7 @@ def user_login(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect("list_project")
+            return redirect("list_projects")
         else:
             form.add_error("password", "Username/Password incorrect")
     else:
@@ -23,3 +23,8 @@ def user_login(request):
         "form": form,
     }
     return render(request, "accounts/login.html", context)
+
+
+def user_logout(request):
+    logout(request)
+    return redirect("login")
