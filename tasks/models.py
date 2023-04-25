@@ -20,3 +20,6 @@ class Task(models.Model):
         null=True,
         on_delete=models.CASCADE,
     )
+
+    def __str__(self):
+        return f"{self.project} {self.name} {self.assignee}"
