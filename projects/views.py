@@ -1,8 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from projects.models import *
+from projects.models import Project
 from django.contrib.auth.decorators import login_required
-from tasks.models import *
-from projects.forms import *
+from projects.forms import ProjectForm
 
 
 # Create your views here.

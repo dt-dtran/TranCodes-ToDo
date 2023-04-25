@@ -1,5 +1,5 @@
 from django.urls import path
-from tasks.views import *
+from tasks.views import create_task, list_task
 
 app_name = "tasks"
 

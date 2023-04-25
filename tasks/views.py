@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from tasks.forms import *
-from tasks.models import *
+from tasks.forms import TaskForm
+from tasks.models import Task
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
