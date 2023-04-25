@@ -4,6 +4,8 @@
 <div>
     <h1> {{ detail.name }}</h1>
     <p>{{ detail.description }}</p>
+    <h2>Tasks</h2>
+    <p><a href="{% url 'tasks:create_task' %}">Create a new task</a></p>
     {% if detail.tasks.exists %}
     <table>
         <thead>
