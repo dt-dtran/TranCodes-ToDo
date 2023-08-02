@@ -1,0 +1,236 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Style Guide</title>
+    <link href="{% static '/css/style-guide.css' %}" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    <div class="section-padding wf-section">
+        <div class="container">
+            <p><a class="link-light" href="{% url 'home_page' %}">Return to home page</a></p>
+            <div class="w-layout-grid style-guide-grid">
+                <div>
+                    <h1>Style Guide</h1>
+                    <p>This page contains the website style guide</p>
+                </div>
+                <div></div>
+                <div class="style-guide-category">
+                    <div>Typography</div>
+                </div>
+                <div></div>
+                <div class="style-guide-edit-wrap">
+                    <p>To edit the font family and color used globally on all type elements edit,
+                        select the <span class="style-guide-element">Body</span> element.
+                </div>
+                <div class="style-guide-wrap">
+                    <p>FONT<br>Global font: Arial, Helvetica Neue, Helvetica, sans-serif</p>
+                </div>
+                <div class="style-guide-edit-wrap">
+                    <p>Default to <span class="style-guide-class tag-class">H1</span> class or edit the <span
+                            class="style-guide-class">heading-1</span>class.</p>
+                </div>
+                <div class="style-guide-wrap">
+                    <h1>H1<br>This the main heading of the home page ribbon section.</h1>
+                </div>
+                <div class="style-guide-edit-wrap">
+                    <p>Default to <span class="style-guide-class tag-class">H2</span> class or edit the <span
+                            class="style-guide-class">heading-2</span> class. <span
+                            class="style-guide-class">short-H2</span> class for wrapped H2.</p>
+                </div>
+                <div class="style-guide-wrap">
+                    <h2>H2<br>Use this as the heading for your different sections throughout the page.</h2>
+                </div>
+                <div class="style-guide-edit-wrap">
+                    <p>To edit the subtitle large paragraph class edit the <span
+                            class="style-guide-class">subheader</span> class.</p>
+                </div>
+                <div class="style-guide-wrap">
+                    <p class="subheader">Sub-header (SUBHEADER). </p>
+                    <p>Combo class used: teal, gold, black, and name.</p>
+                </div>
+                <div class="style-guide-edit-wrap">
+                    <p>To edit the subtitle large paragraph class edit the <span
+                            class="style-guide-class">subtitle</span> class.</p>
+                </div>
+                <div class="style-guide-wrap">
+                    <p class="subtitle">Subtitle - large paragraph
+                </div>
+                <div class="style-guide-edit-wrap">
+                    <p>Default to <span class="style-guide-class tag-class">P</span>To edit the small paragraph class
+                        edit the <span class="style-guide-class">short-p</span> class.
+                    </p>
+                </div>
+                <div class="style-guide-wrap">
+
+                    <p class="short-p"> Regular and Short wrapped paragraph
+                    </p>
+                </div>
+                <div class="style-guide-category">
+                    <div>Color</div>
+                </div>
+                <div></div>
+                <div class="style-guide-edit-wrap">
+                    <p>Select the Background color:</p>
+                </div>
+                <div>
+                    <div class="style-guide-color-wrap dark-background">
+                        <h4 class="light-text">Dark Color: #010922</h4>
+                    </div>
+                    <div class="style-guide-color-wrap primary-color-background">
+                        <h4 class="light-text">Primary Brand Color: #2d2879</h4>
+                    </div>
+                    <div class="style-guide-color-wrap secondary-color-background">
+                        <h4>Secondary Brand Color: #39cccc</h4>
+                    </div>
+                    <div class="style-guide-color-wrap neutral-background">
+                        <h4>Neutral Brand Color: #e0c484</h4>
+                    </div>
+                    <div class="style-guide-color-wrap light-secondary-background-copy">
+                        <h4>Secondary Light Color: #8ad1d1</h4>
+                    </div>
+                    <div class="style-guide-color-wrap light-primary-background">
+                        <h4>Primary Light Color: #7e7ed5</h4>
+                    </div>
+                    <div class="style-guide-color-wrap alt-dark-color">
+                        <h4 class="light-text">Alt Dark Color: #514a4a</h4>
+                    </div>
+                    <div class="style-guide-color-wrap primary-color-background nav-color">
+                        <h4>Nav Link Color: #8ad1d1</h4>
+                    </div>
+                    <div class="style-guide-color-wrap opacity-background">
+                        <h4 class="heading">Dark Opacity Background Color: rgba(101, 89, 189, 0.231)</h4>
+                    </div>
+                    <div class="style-guide-color-wrap light-background">
+                        <h4>Light Color: #f6f1f1</h4>
+                    </div>
+                </div>
+                <div class="style-guide-category">
+                    <div>Buttons</div>
+                </div>
+                <div></div>
+                <div class="style-guide-edit-wrap">
+                    <p>See light vs dark mode buttons. For dark mode use <span class="style-guide-class">.inverse-button
+                        </span></p>
+                    <p>To edit button use <span class="style-guide-class tag-class">button</span> class and <span
+                            class="style-guide-class tag-class">ghost-button</span> class.</p>
+                    <p>Use <span class="style-guide-class">:hover</span> for button hover effect. </p>
+                </div>
+                <div class="style-guide-grid-item-wrap">
+                    <div class="style-guide-color-wrap light-background">
+                        <a href="#" class="button inverse-button w-button">Main Button</a>
+                    </div>
+                    <div class="style-guide-color-wrap dark-background">
+                        <a href="#" class="button w-button">Main Button</a>
+                    </div>
+                    <div class="style-guide-color-wrap light-background">
+                        <a href="#" class="button ghost-button invese-ghost w-button">Ghost Button</a>
+                    </div>
+                    <div class="style-guide-color-wrap dark-background">
+                        <a href="#" class="button ghost-button w-button">Ghost Button</a>
+                    </div>
+                    <div class="style-guide-color-wrap light-background">
+                        <a href="#" class="link-light">Text Link</a>
+                    </div>
+                    <div class="style-guide-color-wrap dark-background">
+                        <a href="#" class="link-dark">Text Link</a>
+                    </div>
+                </div>
+                <div class="style-guide-category">
+                    <div>Layout Elements</div>
+                </div>
+                <div></div>
+                <div class="style-guide-edit-wrap">
+                    <p>To edit the left-right padding on all sections, select the top section on this page and edit the
+                        <span class="style-guide-class">Section-Padding</span> class
+                    </p>
+                </div>
+                <div class="style-guide-layout-demo section-padding">
+                    <div class="style-guide-white-div">
+                        <p>SECTION PADDING</p>
+                        <p>Each sections should include the <span class="style-guide-class">section-padding</span>
+                            class, to make sure there&#x27;s consistent padding and your elements are not touching the
+                            edges of the screen.</p>
+                    </div>
+                </div>
+                <div class="style-guide-edit-wrap">
+                    <p>To edit the Max-Width of the container element, select the top container on this page, and edit
+                        the <span class="style-guide-class">container</span> class</p>
+                </div>
+                <div class="style-guide-layout-demo section-padding">
+                    <div class="style-guide-white-div">
+                        <p>CONTAINER</p>
+                        <p>Each section should have a <span class="style-guide-class">Container</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="style-guide-edit-wrap">
+                    <p>To edit screen responsiveness by max-width, use<span class="style-guide-class">@media screen and
+                            max-width</span> </p>
+                </div>
+                <div class="style-guide-layout-demo section-padding">
+                    <div class="style-guide-white-div">
+                        <p>SCREEN SIZES </p>
+                        <p>Desktop: 1904px, Tablet: 991px and down<br>Mobile landscape: 767px and down, Mobile
+                            portrait: 479px and down</p>
+                        <p>Images sizes: 500, 800, 1080px</p>
+                    </div>
+                </div>
+                <div class="style-guide-category">
+                    <div>CSS Code Organization</div>
+                </div>
+                <div></div>
+                <div class="style-guide-edit-wrap">
+                    <p> <b>Style Guide: </b> Under static folder, file under<span
+                            class="style-guide-class tag-class">style-guide.css</span>
+                </div>
+                <div class="style-guide-wrap">
+                    <p>Use Case:
+                    <ul>
+                        <li>Brand styling for light and dark themes.</li>
+                        <li>Use for repeatable elements</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="style-guide-edit-wrap">
+                    <p> <b>Home and other product pages: </b>under another django app called <span
+                            class="style-guide-element">
+                            Home. </span> Under static folder, file under<span
+                            class="style-guide-class tag-class">home.css</span>
+                </div>
+                <div class="style-guide-wrap">
+                    <p>Use Case:
+                    <ul>
+                        <li>Styling for more text heavy pages</li>
+                        <li>Home app separation for persona use case (i.e internal customer = Marketing)</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="style-guide-edit-wrap">
+                    <p> <b>User Pages: </b> Under static folder, file under<span
+                            class="style-guide-class tag-class">main.css</span>
+                </div>
+                <div class="style-guide-wrap">
+                    <p>Use Case:
+                    <ul>
+                        <li>for general styling for compontents (table, forms, etc)</li>
+                    </ul>
+                    </p>
+                    <p>Work in progess: Stuck on how I want to build
+                    <ul>
+                        <li>Task list </li>
+                        <li> Project management style?</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

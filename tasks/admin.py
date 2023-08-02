@@ -1,8 +1,13 @@
 from django.contrib import admin
-from tasks.models import Task
+from tasks.models import Task, TaskTag
 
 
 # Register your models here.
+@admin.register(TaskTag)
+class TaskTagAdmin(admin.ModelAdmin):
+    list_display = ("name",)
+
+
 @admin.register(Task)
 class TaskAdmin(admin.ModelAdmin):
     list_display = (
@@ -12,4 +17,7 @@ class TaskAdmin(admin.ModelAdmin):
         "is_completed",
         "project",
         "assignee",
+        "description",
+        "priority",
+        "category",
     )

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="section-padding">
+    <div class="container">
+        <p><a class="link-light" href="{% url 'mytasks:show_my_tasks' %}">Return to list</a></p>
+        <div class="container-task">
+            <h1 class="heading-1">{{ detailed.name }}</h1>
+            <h2>Due: {{ detailed.due_date }}</h2>
+            <p class="subheader">Assigned To: {{ detailed.assignee }}</p>
+            <p class="subheader">Description: {{ detailed.description }}</p>
+            <p><a class="link-light" href="{% url 'mytasks:edit_tasks' detailed.id %}">Edit Task</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

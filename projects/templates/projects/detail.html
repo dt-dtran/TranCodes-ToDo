@@ -1,34 +1,96 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block main %}
-<div>
-    <h1> {{ detail.name }}</h1>
-    <p>{{ detail.description }}</p>
-    <h2>Tasks</h2>
-    <p><a href="{% url 'tasks:create_task' %}">Create a new task</a></p>
-    {% if detail.tasks.exists %}
-    <table>
-        <thead>
-            <th>Name</th>
-            <th>Assignee</th>
-            <th>Start date</th>
-            <th>Due date</th>
-            <th>Is completed</th>
-        </thead>
-        <tbody>
-            {% for task in detail.tasks.all %}
-            <tr>
-                <td>{{ task.name }}</td>
-                <td>{{ task.assignee }}</td>
-                <td>{{ task.start_date }}</td>
-                <td>{{ task.due_date }}</td>
-                <td>{{ task.is_completed|yesno }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    {% else %}
-    <p>This project has no tasks</p>
-    {% endif %}
+<div class="section-padding">
+
+    <div class="container">
+        <div class="container-center">
+            <div class="text-center">
+                <div class="text-cemter-top">
+                    <div class="accordion-header">
+                        <h2 class="heading-2 purple-text">{{ detail.name }}</h2>
+                    </div>
+                </div>
+                <div class="light-purple-text">
+                    <p class="p-center">{{ detail.description }}</p>
+                </div>
+            </div>
+        </div>
+        <h2>Tasks</h2>
+        <p><a class="link-light" href="{% url 'mytasks:create_task' %}">Create a new task</a></p>
+        <div class="accordion-wrapper">
+            <div id="my-accordion" class="accordion-card">
+                <div class="accordion-grid w-layout-grid">
+                    <div class="accordion-item-wrapper">
+                        <div class="accordion-sub-wrap">
+                            <div class="accordian-header">
+                                <div class="accordian-header">
+                                    <h3 class="accordion-title">Test</h3>
+                                </div>
+                            </div>
+                            <div id="myContent"
+                                style="height:0px;-webkit-transform:translate3d(null, 20px, 0) scale3d(0.96, 0.96, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 20px, 0) scale3d(0.96, 0.96, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 20px, 0) scale3d(0.96, 0.96, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 20px, 0) scale3d(0.96, 0.96, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
+                                class="accordion-body-wrapper">
+                                <div class="accordion-space"></div>
+                                <div class="light-purple-text">
+                                    <p>Things about Item</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-right">
+                            <a href="myContent" class=" accordion-buttton w-inline-block"
+                                src="{% static '/images/arrow.svg' %}"
+                                alt="Icon - Elements Webflow Library - BRIX Templates" class="accordion-arrow"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Categories</h2>
+        </div>
+        {% for category in categories %}
+        {% if category.tasks.all %}
+        <p class="subheader">{{ category.name }}</p>
+        {% if detail.tasks.exists %}
+
+        <table class="fixed-table">
+            <thead>
+                <th>Name</th>
+                <th>Assignee</th>
+                <th>Start date</th>
+                <th>Due date</th>
+                <th>Is completed</th>
+                <th>Edit</th>
+            </thead>
+            <tbody>
+                {% for task in category.tasks.all %}
+                <tr>
+                    <td class="tasks">{{ task.name }}</td>
+                    <td>{{ task.assignee }}</td>
+                    <td>{{ task.start_date|date:"m/d/Y" }}</td>
+                    <td>{{ task.due_date|date:"m/d/Y" }}</td>
+                    <td><input type="checkbox" name="is_completed" {% if task.is_completed %} checked{% endif %}>
+                    </td>
+                    <td>
+                        {% if user.is_authenticated and user == task.assignee %}
+                        <a class="link-light" href="{% url 'mytasks:edit_tasks' task.project.id %}"> | Edit</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>This project has no tasks</p>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </div>
 </div>
+</div>
+</div>
+
+
 {% endblock %}

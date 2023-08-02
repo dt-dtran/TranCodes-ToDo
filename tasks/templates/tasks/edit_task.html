@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="container">
+    <h1> Edit {{ task.name }} </h1>
+    {% if form.error %}
+    <p>{{ message }}</p>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="button inverse-button w-button">Edit</button>
+    </form>
+</div>
+{% endblock %}

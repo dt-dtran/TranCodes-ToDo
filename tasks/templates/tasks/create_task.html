@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block main %}
-<div>
+<div class="container">
     <h1> Create a new task </h1>
     {% if form.error %}
     <p>{{ message }}</p>
@@ -9,7 +9,7 @@
     <form method="post">
         {% csrf_token %}
         {{form.as_p}}
-        <button>Create</button>
+        <button class="button inverse-button w-button">Create</button>
     </form>
 </div>
 {% endblock %}

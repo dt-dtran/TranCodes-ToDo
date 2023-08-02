@@ -1,26 +1,32 @@
 {% extends "base.html" %}
 
 {% block main %}
-<div>
-    <h1>My Projects</h1>
-    <p><a href="{% url 'create_project' %}">Create a new project</a></p>
-    {% if lists %}
-    <table>
-        <thead>
-            <th>Name</th>
-            <th>Number of Tasks</th>
-        </thead>
-        <tbody>
-            {% for project in lists %}
-            <tr>
-                <td><a href="{% url 'show_project' id=project.id %}">{{ project.name }}</a></td>
-                <td>{{ project.tasks.all|length }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    {% else %}
-    <p>You are not assigned to any projects.</p>
-    {% endif %}
+<div class="section-padding">
+    <div class="container">
+        <h1>My Projects</h1>
+        <p><a class="link-light" href="{% url 'create_project' %}">Create a new project</a></p>
+
+        {% if lists %}
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Number of Tasks</th>
+            </thead>
+            <tbody>
+                {% for project in lists %}
+                <tr>
+                    <td><a class="link-light" href="{% url 'show_project' id=project.id %}">{{ project.name }}</a></td>
+                    <td>{{ project.tasks.all|length }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <p><a class="link-light" href="{% url 'create_category' %}">Create a project category</a></p>
+        <p>Assign tags</p>
+
+        {% else %}
+        <p>You are not assigned to any projects.</p>
+        {% endif %}
+    </div>
 </div>
 {% endblock %}

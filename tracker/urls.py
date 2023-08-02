@@ -19,14 +19,25 @@ from django.urls import path, include
 from django.shortcuts import redirect
 
 
-def redirect_to_list(request):
+def redirect_to_home(request):
+    return redirect("home_page")
+
+
+def redirect_to_login(request):
+    return redirect("login")
+
+
+def redirect_to_project(request):
     return redirect("list_projects")
 
 
 urlpatterns = [
-    path("", redirect_to_list, name="home"),
+    path("", redirect_to_home, name="home"),
     path("admin/", admin.site.urls),
     path("projects/", include("projects.urls")),
     path("accounts/", include("accounts.urls")),
-    path("tasks/", include("tasks.urls", namespace="tasks")),
+    path("accounts/", redirect_to_login, name="account_page"),
+    path("projects/", redirect_to_project, name="project_page"),
+    path("tasks/", include("tasks.urls", namespace="mytasks")),
+    path("", include("home.urls")),
 ]
