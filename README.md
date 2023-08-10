@@ -2,7 +2,7 @@
 
 ## Design
 
-- Django with pure HTML, CSS, and JavaScript.
+- Django with pure HTML, CSS, Python, and JavaScript.
 - Built with mobile-first design.
 
 ## Functionality
